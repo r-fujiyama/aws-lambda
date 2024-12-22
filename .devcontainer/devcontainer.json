@@ -1,0 +1,15 @@
+{
+  "dockerComposeFile": "./../docker/docker-compose.yml",
+  "service": "dev-lambda-python",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "ms-python.mypy-type-checker"
+      ]
+    }
+  }
+}

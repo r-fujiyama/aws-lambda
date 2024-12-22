@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "example-lambda",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${fileWorkspaceFolder}/example-lambda/lambda_function.py",
+      "console": "integratedTerminal",
+      "cwd": "${fileWorkspaceFolder}/example-lambda"
+    }
+  ]
+}
