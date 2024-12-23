@@ -1,3 +1,4 @@
 __pycache__
+.mypy_cache
 /docker/mysql/app-db-data
 /docker/localstack/var

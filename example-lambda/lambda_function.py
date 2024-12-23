@@ -1,15 +1,22 @@
 from aws import S3
 from mysql_dao import UserDao
-from enums import Encode
+from enums import Encoding, UserType
 
 
 def lambda_handler():
-    results = UserDao().find()
+    results = UserDao().sql_find_all()
     for ret in results:
         print(ret)
 
-    result = UserDao().find_by_id(1)
+    result = UserDao().sql_find_by_id(1)
     print(result)
+
+    results = UserDao().find_all()
+    for ret in results:
+        print(ret.last_name)
+
+    result = UserDao().find_by_type(UserType.PRIVATE)
+    print(result.last_name)
 
     bucket_name = "from-bucket"
     keys = S3.get_key_list(bucket_name)
@@ -22,8 +29,8 @@ def lambda_handler():
 
     S3.put_object(bucket_name, "", "fuga.txt", decoded_file_content)
 
-    print(Encode.get_by_id(1))
-    print(Encode.get_by_val("UTF-8"))
+    print(Encoding.get_by_id(1))
+    print(Encoding.get_by_val("UTF-8"))
 
 
 lambda_handler()
